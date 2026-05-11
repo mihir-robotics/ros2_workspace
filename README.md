@@ -6,7 +6,8 @@ ROS 2 Jazzy Jalisco | Ubuntu 24.04 (WSL2) | Built with colcon
 
 | Package | Description |
 |---|---|
-| `tut_01_pub_sub` | Publisher / subscriber basics |
+| `cpp_pubsub` | Publisher / subscriber basics |
+| `cpp_server_client` | Service (server) client basics |
 
 ## Build
 

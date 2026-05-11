@@ -8,6 +8,7 @@ ROS 2 Jazzy Jalisco | Ubuntu 24.04 (WSL2) | Built with colcon
 |---|---|
 | `cpp_pubsub` | Publisher / subscriber basics |
 | `cpp_server_client` | Service (server) client basics |
+| `custom_interfaces` | Creating custom messages / service |
 
 ## Build
 

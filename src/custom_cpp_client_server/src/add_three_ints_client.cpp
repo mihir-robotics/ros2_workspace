@@ -1,5 +1,5 @@
 #include "rclcpp/rclcpp.hpp"
-#include "custom_interfaces/srv/add_three_ints.hpp"                                       // CHANGE
+#include "custom_interfaces/srv/add_three_ints.hpp"                                       
 
 #include <chrono>
 #include <cstdlib>
@@ -11,19 +11,19 @@ int main(int argc, char **argv)
 {
   rclcpp::init(argc, argv);
 
-  if (argc != 4) { // CHANGE
-      RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "usage: add_three_ints_client X Y Z");      // CHANGE
+  if (argc != 4) { 
+      RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "usage: add_three_ints_client X Y Z");      
       return 1;
   }
 
-  std::shared_ptr<rclcpp::Node> node = rclcpp::Node::make_shared("add_three_ints_client");  // CHANGE
-  rclcpp::Client<custom_interfaces::srv::AddThreeInts>::SharedPtr client =                // CHANGE
-    node->create_client<custom_interfaces::srv::AddThreeInts>("add_three_ints");          // CHANGE
+  std::shared_ptr<rclcpp::Node> node = rclcpp::Node::make_shared("add_three_ints_client");  
+  rclcpp::Client<custom_interfaces::srv::AddThreeInts>::SharedPtr client =                
+    node->create_client<custom_interfaces::srv::AddThreeInts>("add_three_ints");          
 
-  auto request = std::make_shared<custom_interfaces::srv::AddThreeInts::Request>();       // CHANGE
+  auto request = std::make_shared<custom_interfaces::srv::AddThreeInts::Request>();       
   request->a = atoll(argv[1]);
   request->b = atoll(argv[2]);
-  request->c = atoll(argv[3]);                                                              // CHANGE
+  request->c = atoll(argv[3]);                                                              
 
   while (!client->wait_for_service(1s)) {
     if (!rclcpp::ok()) {
@@ -40,7 +40,7 @@ int main(int argc, char **argv)
   {
     RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Sum: %ld", result.get()->sum);
   } else {
-    RCLCPP_ERROR(rclcpp::get_logger("rclcpp"), "Failed to call service add_three_ints");    // CHANGE
+    RCLCPP_ERROR(rclcpp::get_logger("rclcpp"), "Failed to call service add_three_ints");    
   }
 
   rclcpp::shutdown();

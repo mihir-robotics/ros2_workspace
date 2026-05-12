@@ -2,7 +2,7 @@
 #include <memory>
 
 #include "rclcpp/rclcpp.hpp"
-#include "custom_interfaces/msg/num.hpp"                                            // CHANGE
+#include "custom_interfaces/msg/num.hpp"                                            
 
 using namespace std::chrono_literals;
 
@@ -12,12 +12,12 @@ public:
   MinimalPublisher()
   : Node("minimal_publisher"), count_(0)
   {
-    publisher_ = this->create_publisher<custom_interfaces::msg::Num>("topic", 10);  // CHANGE
+    publisher_ = this->create_publisher<custom_interfaces::msg::Num>("topic", 10);  
 
     auto timer_callback = [this](){
-      auto message = custom_interfaces::msg::Num();                                   // CHANGE
-      message.num = this->count_++;                                                     // CHANGE
-      RCLCPP_INFO_STREAM(this->get_logger(), "Publishing: '" << message.num << "'");    // CHANGE
+      auto message = custom_interfaces::msg::Num();                                   
+      message.num = this->count_++;                                                     
+      RCLCPP_INFO_STREAM(this->get_logger(), "Publishing: '" << message.num << "'");    
       publisher_->publish(message);
     };
     timer_ = this->create_wall_timer(500ms, timer_callback);
@@ -25,7 +25,7 @@ public:
 
 private:
   rclcpp::TimerBase::SharedPtr timer_;
-  rclcpp::Publisher<custom_interfaces::msg::Num>::SharedPtr publisher_;             // CHANGE
+  rclcpp::Publisher<custom_interfaces::msg::Num>::SharedPtr publisher_;             
   size_t count_;
 };
 

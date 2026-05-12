@@ -18,13 +18,12 @@ public:
     auto publish_msg = [this]() -> void {
         auto message = more_custom_interfaces::msg::AddressBook();
 
-        message.first_name = "John";
-        message.last_name = "Doe";
-        message.phone_number = "1234567890";
-        message.phone_type = message.PHONE_TYPE_MOBILE;
+        message.first_name = "Goober";
+        message.last_name = "Collins";
+        message.phone_number = "818-434-9867";
+        message.phone_type = message.PHONE_TYPE_WORK;
 
-        std::cout << "Publishing Contact\nFirst:" << message.first_name <<
-          "  Last:" << message.last_name << std::endl;
+        std::cout << "{"<< message.first_name <<":"<< message.last_name <<":"<< message.phone_number<< ":" << static_cast<int>(message.phone_type) << "}" << std::endl;
 
         this->address_book_publisher_->publish(message);
       };

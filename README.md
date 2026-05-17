@@ -11,12 +11,13 @@ ROS 2 Jazzy Jalisco | Ubuntu 24.04 (WSL2) | Built with colcon
 | `custom_interfaces` | Creating custom messages / service |
 | `custom_cpp_client_server` | Client / server with custom service |
 | `more_custom_interfaces` | Custom Address book msg with Pub/Sub |
+| `polygon / polygon_plugins` | Custom Plugins for Polygons |
 
 ## Build
 
 ```bash
-source /opt/ros/jazzy/setup.bash
-colcon build --symlink-install
+source install/setup.bash 
+colcon build --packages-select <package_name>
 source install/setup.bash
 ```
 

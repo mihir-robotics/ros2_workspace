@@ -4,21 +4,26 @@ ROS 2 Jazzy Jalisco | Ubuntu 24.04 (WSL2) | Built with colcon
 
 ## Packages
 
-| Package | Description |
-|---|---|
-| `cpp_pubsub` | Publisher / subscriber basics |
-| `cpp_server_client` | Service (server) client basics |
-| `custom_interfaces` | Creating custom messages / service |
-| `custom_cpp_client_server` | Client / server with custom service |
-| `more_custom_interfaces` | Custom Address book msg with Pub/Sub |
-| `polygon / polygon_plugins` | Custom Plugins for Polygons |
+| Package | Description | Difficulty |
+|---|---|---|
+| `cpp_pubsub` | Publisher / subscriber basics | <span style="color:#22c55e">Easy</span> |
+| `cpp_server_client` | Service (server) client basics | <span style="color:#22c55e">Easy</span> |
+| `custom_interfaces` | Creating custom messages / service | <span style="color:#22c55e">Easy</span> |
+| `custom_cpp_client_server` | Client / server with custom service | <span style="color:#22c55e">Easy</span> |
+| `more_custom_interfaces` | Custom Address book msg with Pub/Sub | <span style="color:#22c55e">Easy</span> |
+| `polygon / polygon_plugins` | Custom Plugins for Polygons | <span style="color:#22c55e">Easy</span> |
 
 ## Build
 
 ```bash
+# Creating a new package
+cd src
+ros2 pkg create --build-type ament_cmake --license Apache-2.0 --dependencies <dependencies>  <package_name>
+
+# Building the package
+cd ~/ros2_ws
 source install/setup.bash 
 colcon build --packages-select <package_name>
-source install/setup.bash
 ```
 
 ## Requirements

@@ -13,6 +13,7 @@ ROS 2 Jazzy Jalisco | Ubuntu 24.04 (WSL2) | Built with colcon
 | `more_custom_interfaces` | Custom Address book msg with Pub/Sub | <span style="color:#22c55e">Easy</span> |
 | `polygon / polygon_plugins` | Custom Plugins for Polygons | <span style="color:#22c55e">Easy</span> |
 | `servo_controller` | Control MG90 servo connected to Arduino via Serial | <span style="color:#22c55e">Mini-project</span> |
+| `custom_actions / custom_action_cpp` | Custom Action interface for computing Fibonacci series | <span style="color:#EAB308">Intermediate</span> |
 
 ## Build
 

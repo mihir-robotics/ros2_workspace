@@ -1,0 +1,3 @@
+string joint_name
+uint8 joint_angle
+float64 joint_velocity

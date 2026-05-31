@@ -7,6 +7,9 @@
 
 #include "geometry_msgs/msg/twist.hpp"
 #include "rclcpp/rclcpp.hpp"
+#include <webots/distance_sensor.h>
+
+#define TIME_STEP 32
 
 namespace my_robot_driver {
 class MyRobotDriver : public webots_ros2_driver::PluginInterface {
@@ -24,6 +27,8 @@ private:
 
   WbDeviceTag right_motor;
   WbDeviceTag left_motor;
+  WbDeviceTag ds0;
+  WbDeviceTag ds1;
 };
 } // namespace my_robot_driver
 #endif

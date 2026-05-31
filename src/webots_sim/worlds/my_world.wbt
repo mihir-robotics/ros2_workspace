@@ -19,7 +19,82 @@ RectangleArena {
   floorSize 3 3
   wallHeight 0.1
 }
+
+Solid {
+  translation 0 0 0.05
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.5 0.5 0.5
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 1.2 0.1 0.1
+      }
+    }
+  ]
+  name "obstacle_1"
+  boundingObject Shape {
+    geometry Box {
+      size 1.2 0.1 0.1
+    }
+  }
+  physics Physics {
+  }
+}
+
+Solid {
+  translation 1 1 0.05
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.5 0.5 0.5
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.2 0.2 0.2
+      }
+    }
+  ]
+  name "obstacle_2"
+  boundingObject Shape {
+    geometry Box {
+      size 0.2 0.2 0.2
+    }
+  }
+  physics Physics {
+  }
+}
+
+
+Solid {
+  translation 0.8 -1.1 0.05
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.5 0.5 0.5
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.2 0.4 0.1
+      }
+    }
+  ]
+  name "obstacle_3"
+  boundingObject Shape {
+    geometry Box {
+      size 0.2 0.4 0.1
+    }
+  }
+  physics Physics {
+  }
+}
+
 Robot {
+  translation -1.4 -1.4 0
   children [
     HingeJoint {
       jointParameters HingeJointParameters {
